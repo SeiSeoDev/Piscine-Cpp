@@ -7,25 +7,21 @@
 
 Fixed::Fixed()
 {
-	std::cout << "Default constructor called" << std::endl;
 	this->val = 0;
 }
 
 Fixed::Fixed(const Fixed&src)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
 	*this = src;
 }
 
 Fixed::Fixed(const int val)
 {
-	std::cout << "Integer constructor called" << std::endl;
 	this->val = val << this->mantis;
 }
 
 Fixed::Fixed(const float val)
 {
-	std::cout << "Float constructor called" << std::endl;
 	this->val = roundf(val * (1 << this->mantis));
 }
 
@@ -35,7 +31,6 @@ Fixed::Fixed(const float val)
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
 }
 
 
@@ -45,7 +40,6 @@ Fixed::~Fixed()
 
 Fixed	&Fixed::operator=(Fixed const &nb)
 {
-	std::cout << "Copy assignement operator called" << std::endl;
 	if (this != &nb)
 		this->val = nb.getRawBits();
 	return (*this);
@@ -67,7 +61,6 @@ std::ostream& operator<<(std::ostream &output,  Fixed const&data)
 
 int Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->val);
 }
 
@@ -88,7 +81,7 @@ float	Fixed::toFloat(void) const
 
 bool	Fixed::operator<( const Fixed &nb ) const
 {
-	return (this->	() < nb.getRawBits());
+	return (this->getRawBits() < nb.getRawBits());
 }
 
 bool	Fixed::operator>( const Fixed &nb ) const

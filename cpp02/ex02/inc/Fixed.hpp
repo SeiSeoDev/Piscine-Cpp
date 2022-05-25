@@ -28,11 +28,6 @@ class Fixed
 		Fixed	operator-( const Fixed &nb ) const;
 		Fixed	operator*( const Fixed &nb ) const;
 		Fixed	operator/( const Fixed &nb ) const;
-	// acces values
-		int		getRawBits( void ) const;
-		void	setRawBits( int const raw );
-		float	toFloat( void ) const;
-		int		toInt( void ) const;
 	// increment and decrement
 		Fixed 	&operator++(void);
 		Fixed 	&operator--(void);
