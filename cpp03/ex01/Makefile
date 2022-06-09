@@ -1,13 +1,15 @@
 CC = c++
 
-NAME = ClapTrap
+NAME = ScavTrap
 
 DIR_S = srcs/
 
 SOURCES =	main.cpp		\
-			ClapTrap.cpp
+			ClapTrap.cpp	\
+			ScavTrap.cpp
 
-HEADER = ClapTrap.hpp
+HEADER =	ClapTrap.hpp	\
+			ScavTrap.hpp
 
 INC = inc/
 
@@ -22,7 +24,10 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(OBJS) $(FLAGS) -o $(NAME)
 
-$(OBJS): $(SRCS) $(INC)$(HEADER)
+$(OBJS): $(INC)$(HEADER) $(SRCS)
+	$(CC) -c $(SRCS) $(FLAGS) -I $(INC)
+
+$(INC)$(HEADER):
 	$(CC) -c $(SRCS) $(FLAGS) -I $(INC)
 
 bonus: all

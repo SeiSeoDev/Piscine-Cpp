@@ -1,17 +1,24 @@
-
-
 #include "ClapTrap.hpp"
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
+ClapTrap::ClapTrap()
+{
+	std::cout << "Ha ha ha! I LIVE! Hahaha" << std::endl;
+	this->Name = "Clap";
+	this->hitPoint = 10;
+	this->energyPoint = 10;
+	this->attackDamage = 0;
+}
+
 ClapTrap::ClapTrap(std::string Name)
 {
+	std::cout << "Ha ha ha! I LIVE! Hahaha" << std::endl;
 	this->Name = Name;
 	this->hitPoint = 10;
 	this->energyPoint = 10;
 	this->attackDamage = 0;
-	std::cout << "Hahahahaha! I'm alive" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap&src)
@@ -19,14 +26,13 @@ ClapTrap::ClapTrap(const ClapTrap&src)
 	*this = src;
 }
 
-
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Are you god? Am I dead? " << std::endl;
+	std::cout << "I'M DEAD I'M DEAD OHMYGOD I'M DEAD! " << std::endl;
 }
 
 
@@ -59,7 +65,6 @@ void ClapTrap::attack(const std::string& target)
 	}
 	this->energyPoint -= 1;
 	std::cout << "ClapTrap " << this->Name << " attack " << target << " and deal " << this->attackDamage << " Damage" << std::endl;
-	std::cout << "Woohoo! In your face!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
